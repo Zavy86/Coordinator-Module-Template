@@ -17,8 +17,8 @@ Template module for Coordinator.
 ## Installation
 Move to the root directory of Coordinator and run the following command:
 
-$ git clone https://github.com/Zavy86/Coordinator-Module-Template.git module-template
+	$ git clone https://github.com/Zavy86/Coordinator-Module-Template.git module-template
 
 if you are a developer or you want to test the development version you need to run
 
-$ git checkout develop
+	$ git checkout develop
