@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<locale language="EN">
+
+ <!-- template.inc.php -->
+ <text key="module-template-title">Module Template</text>
+ <text key="module-template-list">Module Template List</text>
+ <text key="module-template-edit">Module Template Edit</text>
+
+</locale>
