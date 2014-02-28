@@ -2,8 +2,10 @@
 
 <locale language="EN">
 
+ <!-- module -->
+ <text key="module-title">Module Template</text>
+
  <!-- template.inc.php -->
- <text key="module-template-title">Module Template</text>
  <text key="module-template-list">Module Template List</text>
  <text key="module-template-edit">Module Template Edit</text>
 
