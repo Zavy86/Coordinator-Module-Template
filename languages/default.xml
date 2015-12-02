@@ -5,8 +5,20 @@
  <!-- module -->
  <text key="module-title">Module Template</text>
 
+ <!-- filters -->
+ <text key="filter-sex">Sex</text>
+ <text key="filter-undefined">Undefined</text>
+ <text key="filter-male">Male</text>
+ <text key="filter-female">Female</text>
+
  <!-- template.inc.php -->
- <text key="module-template-list">Module Template List</text>
- <text key="module-template-edit">Module Template Edit</text>
+ <text key="module-template-nav-list">List</text>
+ <text key="module-template-nav-add">Add new</text>
+
+ <!-- module-template_list.php -->
+ <text key="module-template_list-tr-unvalued">There are no address to show..</text>
+ <text key="module-template_list-th-lastname">Cognome</text>
+ <text key="module-template_list-th-firstname">Nome</text>
+ <text key="module-template_list-th-address">Address</text>
 
 </locale>
