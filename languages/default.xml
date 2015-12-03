@@ -9,10 +9,12 @@
  <text key="addressNotFound">The address was not found..</text>
  <text key="addressCreated">The address was created</text>
  <text key="addressUpdated">The address was updated</text>
+ <text key="addressDeleted">The address was deleted</text>
 
  <!-- logs -->
  <text key="logs_module-template_addressCreated">Address [Created] {0} {1}</text>
  <text key="logs_module-template_addressUpdated">Address [Updated] {0} {1}</text>
+ <text key="logs_module-template_addressDeleted">Address [Deleted] {0} {1}</text>
 
  <!-- filters -->
  <text key="filter-sex">Sex</text>

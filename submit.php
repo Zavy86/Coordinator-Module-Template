@@ -71,4 +71,24 @@ function address_save(){
  exit(header("location: module-template_view.php?idAddress=".$address->id.$alert));
 }
 
+/**
+ * Address Delete
+ */
+function address_delete(){
+ // check address edit permission
+ if(!api_checkPermission("module-template","address_del")){api_die("accessDenied");}
+ // get objects
+ $address=api_moduleTemplate_address($_GET['idAddress']);
+ if(!$address->id){exit(header("location: module-template_list.php?alert=addressNotFound&alert_class=alert-error"));}
+ // execute queries
+ $GLOBALS['db']->execute("DELETE FROM `module-template_addresses` WHERE `id`='".$address->id."'");
+ // log event
+  $log=api_log(API_LOG_WARNING,"module-template","addressDeleted",
+   "{logs_module-template_addressDeleted|".$address->firstname."|".$address->lastname."}",
+   $address->id);
+ // redirect
+ $alert="?alert=addressDeleted&alert_class=alert-warning&idLog=".$log->id;
+ exit(header("location: module-template_list.php".$alert));
+}
+
 ?>
