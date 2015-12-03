@@ -83,14 +83,4 @@ function api_moduleTemplate_addresses($search=NULL,$pagination=FALSE,$where=NULL
  return $return;
 }
 
-
-
-
-
-
-
-
-
-
-
 ?>
