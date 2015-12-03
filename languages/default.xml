@@ -5,20 +5,57 @@
  <!-- module -->
  <text key="module-title">Module Template</text>
 
+ <!-- alerts -->
+ <text key="addressNotFound">The address was not found..</text>
+ <text key="addressCreated">The address was created</text>
+ <text key="addressUpdated">The address was updated</text>
+
+ <!-- logs -->
+ <text key="logs_module-template_addressCreated">Address [Created] {0} {1}</text>
+ <text key="logs_module-template_addressUpdated">Address [Updated] {0} {1}</text>
+
  <!-- filters -->
  <text key="filter-sex">Sex</text>
  <text key="filter-undefined">Undefined</text>
  <text key="filter-male">Male</text>
  <text key="filter-female">Female</text>
 
+ <!-- sex -->
+ <text key="sex-undefined">Undefined</text>
+ <text key="sex-male">Male</text>
+ <text key="sex-female">Female</text>
+
  <!-- template.inc.php -->
- <text key="module-template-nav-list">List</text>
- <text key="module-template-nav-add">Add new</text>
+ <text key="module-template-nav-list">Address list</text>
+ <text key="module-template-nav-operations">Operations</text>
+ <text key="module-template-nav-edit">Edit address</text>
+ <text key="module-template-nav-delete">Delete address</text>
+ <text key="module-template-nav-delete-confirm">Are you sure you want to delete this address?</text>
+ <text key="module-template-nav-export">Export address</text>
+ <text key="module-template-nav-add">Add address</text>
 
  <!-- module-template_list.php -->
  <text key="module-template_list-tr-unvalued">There are no address to show..</text>
- <text key="module-template_list-th-lastname">Cognome</text>
- <text key="module-template_list-th-firstname">Nome</text>
+ <text key="module-template_list-th-lastname">Lastname</text>
+ <text key="module-template_list-th-firstname">Firstname</text>
  <text key="module-template_list-th-address">Address</text>
+
+ <!-- module-template_view.php -->
+ <text key="module-template_view-dt-name">Name</text>
+ <text key="module-template_view-dt-sex">Sex</text>
+ <text key="module-template_view-dt-birthday">Birthday</text>
+
+ <!-- module-template_edit.php -->
+ <text key="module-template_edit-ff-firstname">Firstname</text>
+ <text key="module-template_edit-ff-firstname-placeholder">Insert the first name</text>
+ <text key="module-template_edit-ff-lastname">Lastname</text>
+ <text key="module-template_edit-ff-lastname-placeholder">Insert the last name</text>
+ <text key="module-template_edit-ff-sex">Sex</text>
+ <text key="module-template_edit-fo-sex-undefined">Undefined</text>
+ <text key="module-template_edit-fo-sex-male">Male</text>
+ <text key="module-template_edit-fo-sex-female">Female</text>
+ <text key="module-template_edit-ff-birthday">Birthday</text>
+ <text key="module-template_edit-fc-submit">Submit</text>
+ <text key="module-template_edit-fc-cancel">Cancel</text>
 
 </locale>
