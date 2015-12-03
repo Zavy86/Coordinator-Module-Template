@@ -10,14 +10,11 @@ include("../core/api.inc.php");
 api_loadModule();
 // print header
 $html->header(api_text("module-title"),$module_name);
+ // get objects
+ $address=api_moduleTemplate_address($_GET['idAddress']);
 // build navigation menu
 global $navigation;
 $navigation=new str_navigation((api_baseName()=="module-template_list.php"?TRUE:FALSE));
-// list
-$navigation->addTab(api_text("module-template-nav-list"),"module-template_list.php");
-// add new, with check permission
-$navigation->addTab(api_text("module-template-nav-add"),"module-template_edit.php",NULL,NULL,(api_checkPermission($module_name,"edit")?TRUE:FALSE));
-
 // filters
 if(api_baseName()=="module-template_list.php"){
  // sex
@@ -27,10 +24,20 @@ if(api_baseName()=="module-template_list.php"){
   //include("filters.inc.php");
  }
 }
-
+// list
+$navigation->addTab(api_text("module-template-nav-list"),"module-template_list.php");
+// operations
+if($address->id){
+ $navigation->addTab(api_text("module-template-nav-operations"),NULL,NULL,"active");
+ $navigation->addSubTab(api_text("module-template-nav-edit"),"module-template_edit.php?idAddress=".$address->id,NULL,NULL,(api_checkPermission($module_name,"address_edit")?TRUE:FALSE));
+ $navigation->addSubTab(api_text("module-template-nav-delete"),"submit.php?act=address_delete&idAddress=".$address->id,NULL,NULL,(api_checkPermission($module_name,"address_del")?TRUE:FALSE),"_self",api_text("module-template-nav-delete-confirm"));
+ $navigation->addSubTab(api_text("module-template-nav-export"),"module-template_export.php?idAddress=".$address->id);
+}else{
+ // add new, with check permission
+ $navigation->addTab(api_text("module-template-nav-add"),"module-template_edit.php",NULL,NULL,(api_checkPermission($module_name,"edit")?TRUE:FALSE));
+}
 // show navigation menu
 $navigation->render();
-
 // check permissions before displaying module
 if($checkPermission==NULL){content();}else{if(api_checkPermission($module_name,$checkPermission,TRUE)){content();}}
 // print footer

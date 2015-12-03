@@ -6,7 +6,7 @@
 /**
  * Address object
  *
- * @param mixed $address request id or object
+ * @param mixed $address address id or object
  * @return object address object
  */
 function api_moduleTemplate_address($address){
@@ -16,8 +16,27 @@ function api_moduleTemplate_address($address){
  // check and convert
  $address->firstname=stripslashes($address->firstname);
  $address->lastname=stripslashes($address->lastname);
+ $address->sexText=api_moduleTemplate_sexText($address);
+ // make name
+ $address->name=$address->firstname." ".$address->lastname;
  // return address object
  return $address;
+}
+
+/**
+ * Sex text
+ *
+ * @param mixed $address address object
+ * @return string sex text
+ */
+function api_moduleTemplate_sexText($address){
+ switch($address->sex){
+  case "U":$return=api_text("sex-undefined");break;
+  case "M":$return=api_text("sex-male");break;
+  case "F":$return=api_text("sex-female");break;
+  default:$return="[Sex not found]";
+ }
+ return $return;
 }
 
 /**
