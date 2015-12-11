@@ -5,7 +5,7 @@
 -- --------------------------------------------------------
 
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE `test-module-template`;
+DROP TABLE `module-template_addresses`;
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- --------------------------------------------------------
