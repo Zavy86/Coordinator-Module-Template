@@ -65,7 +65,6 @@ function api_moduleTemplate_addresses($search=NULL,$pagination=FALSE,$where=NULL
  }
  // conditions
  if(strlen($where)>0){$query_where="( ".$query_where." ) AND ( ".$where." )";}
-
  // order
  $query_order=api_queryOrder("`lastname` ASC");
  // pagination

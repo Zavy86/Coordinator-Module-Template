@@ -2,7 +2,7 @@
 /* -------------------------------------------------------------------------- *\
 |* -[ Module-Template - Edit ]----------------------------------------------- *|
 \* -------------------------------------------------------------------------- */
-$checkPermission="module-template_edit";
+$checkPermission="address_edit";
 include("template.inc.php");
 function content(){
  // get objects

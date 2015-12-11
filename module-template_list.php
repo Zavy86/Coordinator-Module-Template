@@ -3,7 +3,7 @@
 |* -[ Module-Template - List ]----------------------------------------------- *|
 \* -------------------------------------------------------------------------- */
 // script permission
-$checkPermission="module-template_view";
+$checkPermission="address_view";
 // include module template
 include("template.inc.php");
 // script content
