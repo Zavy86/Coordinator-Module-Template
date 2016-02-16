@@ -60,4 +60,13 @@
  <text key="module-template_edit-fc-submit">Submit</text>
  <text key="module-template_edit-fc-cancel">Cancel</text>
 
+  <!-- module-template_export.php -->
+ <text key="module-template_export-title">Module template export</text>
+ <text key="module-template_export-nominative">Nominative</text>
+ <text key="module-template_export-sex">Sex</text>
+ <text key="module-template_export-birthday">Birthday</text>
+ <text key="module-template_export-page">Page</text>
+ <text key="module-template_export-pageOf">of</text>
+ <text key="module-template_export-footer">Printed {0}</text>
+
 </locale>
