@@ -26,6 +26,10 @@ if(api_baseName()=="module-template_list.php"){
 }
 // list
 $navigation->addTab(api_text("module-template-nav-list"),"module-template_list.php");
+if(api_baseName()=="module-template_list.php"){
+ $navigation->addSubTab(api_text("module-template-nav-export"),"module-template_export.php?q=".$_GET['q'],NULL,NULL,TRUE,"_blank");
+}
+
 // operations
 if($address->id){
  $navigation->addTab(api_text("module-template-nav-operations"),NULL,NULL,"active");
