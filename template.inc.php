@@ -36,6 +36,7 @@ if($address->id){
  $navigation->addSubTab(api_text("module-template-nav-edit"),"module-template_edit.php?idAddress=".$address->id,NULL,NULL,(api_checkPermission($module_name,"address_edit")?TRUE:FALSE));
  $navigation->addSubTab(api_text("module-template-nav-delete"),"submit.php?act=address_delete&idAddress=".$address->id,NULL,NULL,(api_checkPermission($module_name,"address_del")?TRUE:FALSE),"_self",api_text("module-template-nav-delete-confirm"));
  $navigation->addSubTab(api_text("module-template-nav-export"),"module-template_export.php?idAddress=".$address->id);
+ $navigation->addSubTab(api_text("module-template-nav-sendmail"),"module-template_sendmail.php?idAddress=".$address->id);
 }else{
  // add new, with check permission
  $navigation->addTab(api_text("module-template-nav-add"),"module-template_edit.php",NULL,NULL,(api_checkPermission($module_name,"edit")?TRUE:FALSE));
