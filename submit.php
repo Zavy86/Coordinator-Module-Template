@@ -13,6 +13,7 @@ switch($act){
  // address
  case "address_save":address_save();break;
  case "address_delete":address_delete();break;
+ case "address_sendmail":address_sendmail();break;
  // default
  default:
   $alert="?alert=submitFunctionNotFound&alert_class=alert-warning&act=".$act;
@@ -79,7 +80,7 @@ function address_delete(){
  if(!api_checkPermission("module-template","address_del")){api_die("accessDenied");}
  // get objects
  $address=api_moduleTemplate_address($_GET['idAddress']);
- if(!$address->id){exit(header("location: module-template_list.php?alert=addressNotFound&alert_class=alert-error"));}
+ if(!$address->id){exit(header("location: module-template_view.php?alert=addressNotFound&alert_class=alert-error"));}
  // execute queries
  $GLOBALS['db']->execute("DELETE FROM `module-template_addresses` WHERE `id`='".$address->id."'");
  // log event
@@ -88,7 +89,35 @@ function address_delete(){
    $address->id);
  // redirect
  $alert="?alert=addressDeleted&alert_class=alert-warning&idLog=".$log->id;
- exit(header("location: module-template_list.php".$alert));
+ exit(header("location: module-template_view.php".$alert));
 }
 
+/**
+ * Address Sendmail
+ */
+function address_sendmail(){
+ // get objects
+ $address=api_moduleTemplate_address($_GET['idAddress'],TRUE);
+ if(!$address->id){exit(header("location:module-template_view.php?alert=addressNotFound&alert_class=alert-error"));}
+ // acquire variables
+ $p_receivers=api_cleanString(strtolower($_POST['receivers']),"/[^A-Za-z0-9._@;]/");
+ // check and convert
+ $v_receivers_array=array_filter(explode(";",$p_receivers));
+ // make mail content
+ $mail_content=api_text("submit_address_sendmail-message");
+ $mail_content.="\n\n".api_text("submit_address_sendmail-name",$address->name);
+ $mail_content.="\n\n".api_text("submit_address_sendmail-sex",$address->sexText);
+ $mail_content.="\n\n".api_text("submit_address_sendmail-birthday",$address->birthday);
+ // cycle receivers
+ foreach($v_receivers_array as $receiver){
+  api_mailer($receiver,$mail_content,api_text("submit_address_sendmail-subject",$address->name),TRUE,api_getOption("owner_mail"),api_getOption("owner_mail_from"),NULL,NULL,NULL);
+ }
+ // log event
+ $log=api_log(API_LOG_NOTICE,"module-template","addressSendmail",
+  "{logs_module-template_addressSendmail|".$address->name."|".implode(", ",$v_receivers_array)."}",
+  $address->id,"module-template/module-template_view.php?idAddress=".$address->id);
+ // redirect
+ $alert="&alert=addressSendmail&alert_class=alert-success&idLog=".$log->id;
+ exit(header("location:module-template_view.php?idAddress=".$address->id.$alert));
+}
 ?>
