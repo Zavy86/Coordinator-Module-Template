@@ -112,5 +112,9 @@ foreach($addresses->results as $address){
  $pdf->Ln(6);
 }
 // close and output pdf document
-$pdf->Output("module-template_export_".date("YmdHis").".pdf",'I');
+if(strlen($file_path)>0){
+ $pdf->Output($file_path,'F');
+}else{
+ $pdf->Output("module-template_export_".date("YmdHis").".pdf",'I');
+}
 ?>
