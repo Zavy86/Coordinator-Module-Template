@@ -17,7 +17,7 @@ $navigation->addFilter("multiselect","sex",api_text("filter-sex"),array("M"=>api
 // load session filters if exist
 if(isset($_SESSION['filters']["module-template_list.php"])){$_GET=array_merge($_SESSION['filters']["module-template_list.php"],$_GET);}
 // if not filtered load default filters
-if($_GET['resetFilters']||($_GET['filtered']<>1 && $_SESSION['filters']["module-template_list.php"]['filtered']<>1)){
+if($_GET['resetFilters']||($_GET['filtered']<>1 && $_SESSION['filters'][api_baseModule()]["module-template_list.php"]['filtered']<>1)){
  //include("filters.inc.php");
 }
 // extend the TCPDF class to create custom header and footer
