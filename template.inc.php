@@ -20,7 +20,7 @@ if(api_baseName()=="module-template_list.php"){
  // sex
  $navigation->addFilter("multiselect","sex",api_text("filter-sex"),array("U"=>api_text("filter-undefined"),"M"=>api_text("filter-male"),"F"=>api_text("filter-female")));
  // if not filtered load default filters
- if($_GET['resetFilters']||($_GET['filtered']<>1 && $_SESSION['filters'][api_baseName()]['filtered']<>1)){
+ if($_GET['resetFilters']||($_GET['filtered']<>1 && $_SESSION['filters'][api_baseModule()][api_baseName()]['filtered']<>1)){
   //include("filters.inc.php");
  }
 }
