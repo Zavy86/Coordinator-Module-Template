@@ -3,7 +3,7 @@
 |* -[ Module-Template - Module Information ]--------------------------------- *|
 \* -------------------------------------------------------------------------- */
 $module_name="module-template";
-$module_version="1.0.2";
+$module_version="1.0.3";
 $module_title="Module Template";
 $module_description="Coordinator Module Template";
 // create a link to this module in main menu
